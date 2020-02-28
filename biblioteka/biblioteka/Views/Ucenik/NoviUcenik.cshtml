@@ -1,0 +1,42 @@
+﻿@model WebApplication1.Models.UcenikModel
+@{
+    ViewBag.Title = "NoviUcenik";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NoviUcenik</h2>
+@using (Html.BeginForm("NoviUcenik", "Ucenik", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Ime</td>
+            <td>@Html.TextBoxFor(a => a.Ime)</td>
+        </tr>
+        <tr>
+            <td>Prezime</td>
+            <td>@Html.TextBoxFor(a => a.Prezime)</td>
+        </tr>
+        <tr>
+            <td>GodinaRodjenja</td>
+            <td>@Html.TextBoxFor(a => a.GodinaRodjenja)</td>
+        </tr>
+        <tr>
+            <td>Odeljenje</td>
+            <td>@Html.TextBoxFor(a => a.Odeljenje)</td>
+        </tr>
+        <tr>
+            <td>UcenikID</td>
+            <td>@Html.TextBoxFor(a => a.UcenikID)</td>
+        </tr>
+        <tr>
+            <td>BrojUDnevniku</td>
+            <td>@Html.TextBoxFor(a => a.BrojUDnevniku)</td>
+        </tr>
+        <tr>
+            <td>Razred</td>
+            <td>@Html.TextBoxFor(a => a.Razred)</td>
+        </tr>
+    </table>
+<input type="submit" id="submit" value="sacuvaj ucenika" />
+}
+

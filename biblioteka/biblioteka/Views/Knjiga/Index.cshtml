@@ -1,0 +1,21 @@
+﻿@using WebApplication1.Models
+@model ICollection<KnjigaModel>
+
+@{
+    ViewBag.Title = "KnjigeTabela";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>KnjigeTabela</h2>
+
+<table class="table table-responsive table-striped">
+    @foreach (var knjiga in Model)
+    {
+        <tr>
+            <td>@knjiga.Naslov</td>
+            <td>@knjiga.Pisac</td>
+            <td><a href="/knjiga/izmeni/@knjiga.KnjigaId" class="btn btn-primary">Izmeni</a></td>
+        </tr>   
+    }
+</table>
+

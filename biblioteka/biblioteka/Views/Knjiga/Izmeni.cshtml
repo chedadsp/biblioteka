@@ -1,0 +1,36 @@
+﻿@model WebApplication1.Models.KnjigaModel
+
+@{
+    ViewBag.Title = "NovaKnjiga";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NovaKnjiga</h2>
+
+@using (Html.BeginForm("Izmeni","knjiga",FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Naslov knjige</td>
+            <td>@Html.TextBoxFor(a=> a.Naslov)</td>
+        </tr>
+        <tr>
+            <td>Inventarni Broj</td>
+            <td>@Html.TextBoxFor(a=> a.InventarniBroj)</td>
+        </tr>
+        <tr>
+            <td>Godina Izdavanja</td>
+            <td>@Html.TextBoxFor(a=> a.GodinaIzdavanja)</td>
+        </tr>
+        <tr>
+            <td>Mesto Izdavanja</td>
+            <td>@Html.TextBoxFor(a=> a.MestoIzdavanja)</td>
+        </tr>
+        <tr>
+            <td>Pisac</td>
+            <td>@Html.TextBoxFor(a=> a.Pisac)</td>
+        </tr>
+    </table>
+
+    <input type="submit" id="submit" value="sacuvajknjigu" />
+}
