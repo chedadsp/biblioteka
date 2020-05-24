@@ -1,0 +1,64 @@
+﻿@model WebApplication1.Models.KnjigaModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KnjigaModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InventarniBroj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventarniBroj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pisac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pisac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Naslov)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naslov)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GodinaIzdavanja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GodinaIzdavanja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MestoIzdavanja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MestoIzdavanja)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Zanr.Zanr)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KnjigaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

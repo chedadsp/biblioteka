@@ -1,33 +1,61 @@
-﻿@using WebApplication1.Models
-@model ICollection<KnjigaModel>
+﻿@model IEnumerable<WebApplication1.Models.KnjigaModel>
 
 @{
-    ViewBag.Title = "KnjigeTabela";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>KnjigeTabela</h2>
+<h2>Index</h2>
 
-<table class="table table-responsive table-striped">
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
     <tr>
-        <th>Naslov</th>
-        <th>Inv. Broj</th>
-        <th>Pisac</th>
-        <th>God. Izd.</th>
-        <th>Mesto izd.</th>
+        <th>
+            @Html.DisplayNameFor(model => model.InventarniBroj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pisac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Naslov)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GodinaIzdavanja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MestoIzdavanja)
+        </th>
+        <th>@Html.DisplayNameFor(model => model.Zanr.Zanr)</th>
         <th></th>
     </tr>
-    @foreach (var knjiga in Model)
-    {
-    
-    <tr>
-        <td>@knjiga.Naslov</td>
-        <td>@knjiga.InventarniBroj</td>
-        <td>@knjiga.Pisac</td>
-        <td>@knjiga.GodinaIzdavanja</td>
-        <td>@knjiga.MestoIzdavanja</td>
-        <td><a href="/knjiga/izmeni/@knjiga.KnjigaId" class="btn btn-primary">Izmeni</a></td>
-    </tr>   
-    }
-</table>
 
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InventarniBroj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pisac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naslov)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GodinaIzdavanja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MestoIzdavanja)
+        </td>
+        <td>@Html.DisplayFor(modelItem => item.Zanr.Zanr)</td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KnjigaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KnjigaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KnjigaId })
+        </td>
+    </tr>
+}
+
+</table>

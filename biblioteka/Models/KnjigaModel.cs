@@ -22,5 +22,9 @@ namespace WebApplication1.Models
         public int GodinaIzdavanja { get; set; }
 
         public string MestoIzdavanja { get; set; }
+
+        public int ZanrId { get; set; }
+
+        public virtual ZanrModel Zanr { get; set; }
     }
 }

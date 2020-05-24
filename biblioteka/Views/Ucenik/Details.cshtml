@@ -1,0 +1,91 @@
+﻿@model WebApplication1.Models.UcenikModel
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View</h2>
+
+<div>
+    <h4>UcenikModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GodinaRodjenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GodinaRodjenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrojUDnevniku)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrojUDnevniku)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Razred)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Razred)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Odeljenje)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Odeljenje)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UcenikID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
